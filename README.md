@@ -1,9 +1,16 @@
-# Typescript code exercise topics
+# Typescript code cheat sheet
+
 
 - Introdution of Typescript
 - Installation
-- Data types in typescript
-- Assignment and Type inference
-- Objects
-- Arrays
-- Tuples
+
+-Basics
+    - Data types in typescript
+    - Assignment and Type inference
+    - Objects
+    - Arrays
+    - Tuples
+    - Enum
+    - The "any" type
+    - Union Type
+    - Literal type
