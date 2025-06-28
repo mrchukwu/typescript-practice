@@ -70,4 +70,12 @@ let isEqual = false;
     role: Roles.ADMIN
  }
 
- if(user.role === Roles.ADMIN) console.log(user.role);
+//  if(user.role === Roles.ADMIN) console.log(user.role);
+
+//10. ANY TYPE IN TYPESCRIPT
+let dynamicData: any;
+dynamicData = 100;
+let arrAny: any[];
+arrAny = ['Hello', 100, true, null, undefined]; //can inpt any type of data
+
+
