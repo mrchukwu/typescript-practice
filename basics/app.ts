@@ -78,4 +78,29 @@ dynamicData = 100;
 let arrAny: any[];
 arrAny = ['Hello', 100, true, null, undefined]; //can inpt any type of data
 
+//11. UNION TYPE
+let userUnion : {name: string, age: number} | null = null;
 
+function getUserUnion(){
+    const uname = 'Jane';
+    const uage = 34;
+    userUnion = {name: uname, age: uage};
+    return userUnion;
+}
+const resultUnion = getUserUnion();
+console.log(resultUnion)
+
+//version 1. what if the information of status code needs to be rimmed
+// function printStatusUnion(message: string, statusCode: number | string){
+//     console.log(`${message}. Status code: ${statusCode}`)
+// }
+
+// veresion 2 taking cae of the trim() method on string
+function printStatusUnion(message: string, statusCode: string | number){
+    if(statusCode === 'string')
+        console.log(`${message}. Status code: ${statusCode.trim()}`)
+    console.log(`${message}. Status code: ${statusCode}`)
+}
+
+printStatusUnion("User created successful", 201);
+printStatusUnion("User not found", "404");

@@ -55,5 +55,31 @@ var user = {
     gender: 'male',
     role: Roles.ADMIN
 };
-if (user.role === Roles.ADMIN)
-    console.log(user.role);
+//  if(user.role === Roles.ADMIN) console.log(user.role);
+//10. ANY TYPE IN TYPESCRIPT
+var dynamicData;
+dynamicData = 100;
+var arrAny;
+arrAny = ['Hello', 100, true, null, undefined]; //can inpt any type of data
+//11. UNION TYPE
+var userUnion = null;
+function getUserUnion() {
+    var uname = 'Jane';
+    var uage = 34;
+    userUnion = { name: uname, age: uage };
+    return userUnion;
+}
+var resultUnion = getUserUnion();
+console.log(resultUnion);
+//version 1. what if the information of status code needs to be rimmed
+// function printStatusUnion(message: string, statusCode: number | string){
+//     console.log(`${message}. Status code: ${statusCode}`)
+// }
+// veresion 2 taking cae of the trim() method on string
+function printStatusUnion(message, statusCode) {
+    if (statusCode === 'string')
+        console.log("".concat(message, ". Status code: ").concat(statusCode.trim()));
+    console.log("".concat(message, ". Status code: ").concat(statusCode));
+}
+printStatusUnion("User created successful", 201);
+printStatusUnion("User not found", "404");
