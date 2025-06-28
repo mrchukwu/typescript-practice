@@ -102,5 +102,28 @@ function printStatusUnion(message: string, statusCode: string | number){
     console.log(`${message}. Status code: ${statusCode}`)
 }
 
-printStatusUnion("User created successful", 201);
-printStatusUnion("User not found", "404");
+//test cases
+// printStatusUnion("User created successful", 201);
+// printStatusUnion("User not found", "404");
+
+//12. LITERAL TYPE
+const str1Literal = 'some string 1'; //this has a literal
+let str2Literal = "some string 2";
+
+function roleLiteralMessage(role: 'admin' | 'read-write' | 'read'){
+    switch(role){
+        case 'admin':
+            console.log("You have admin permission on this site.");
+            break;
+        case 'read-write':
+            console.log("You have read/write permission on this site");
+            break;
+        case 'read':
+            console.log("You have read permission on this site");
+            break;
+        default:
+            console.log("Unknow user permission");
+    }
+}
+
+roleLiteralMessage('admin')
