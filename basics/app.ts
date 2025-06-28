@@ -4,7 +4,7 @@ console.log("Hello Typesvript");
 const firstname: String = "Kennedy";
 const lastname: String = "Chukwu";
 
-console.log(firstname, " ",lastname)
+// console.log(firstname, " ",lastname)
 
 // 1. STRING DATATYPE
 
@@ -13,7 +13,7 @@ const str2 = 'This is a string using single quotes';
 const str3 = `This is a string created using back ticks`;
 
 // 2 Numbers: numbers are always saved as floating numbers in  Tyescript
-Let num = 12; //return 12.0
+const  num = 12; //return 12.0
 const pi = 3.14;
 
 // 3 Booleans
@@ -27,7 +27,7 @@ let isEqual = false;
  const addNums = (num1: number, num2: number) => {
     return num1 + num1
  }
- console.log(addNums(4, 5));
+//  console.log(addNums(4, 5));
 
  //6. OBJECT TYPE IN TYPESCRIPT
 //  let person: object = {
@@ -59,4 +59,15 @@ let isEqual = false;
  let employee : [number, string, number, boolean] =  [123, 'smith', 2000, true]
 
  //9. ENUM IN TYPESCRIPT
- 
+ enum Roles {
+    ADMIN = "ADMIN", READ_ONLY = "READ_ONLY", WRITE_ONLY = "WRITE_ONLY", READ_WRITE = "READ_WRITE"
+ }
+
+ const user = {
+    name: "john",
+    age: 30,
+    gender: 'male',
+    role: Roles.ADMIN
+ }
+
+ if(user.role === Roles.ADMIN) console.log(user.role);
