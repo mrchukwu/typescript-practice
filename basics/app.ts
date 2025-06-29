@@ -173,7 +173,7 @@ let userAlias: User = {
 // console.log(isEligibleToVotealias(userAlias))
 
 //*************************************
-//FUNCTION RETURN TYPE : 
+//14. FUNCTION RETURN TYPE : 
 // determine the type of value returned in a function
 //*************************************
 
@@ -194,3 +194,37 @@ function addNumbers(num1: number, num2: number): number {
 
 //test case
 // console.log(addNumbers(4,5));
+
+function addNumbers2(a: number, b: number): void{
+    console.log(addNumbers2(10, 20)) //function not returning anything...therefore void 
+}
+
+//*******************************************
+//Funtion as Type
+//*******************************************
+type UserFunc = {name: string, age: number};
+
+function greetUser(user: UserFunc){
+    const greetmsg = 'Hello, ' + user.name;
+    console.log(greetmsg);
+}
+
+function sum(num1: number, num2: number){
+    return num1 + num2;
+}
+
+function isEligibleFunc(user: UserFunc) {
+    console.log(user.age >= 18)
+}
+
+let greet : (usr: UserFunc) => void;
+// greet = greetUser;
+greet = isEligibleFunc;
+
+let calculateSum : (num1: number, num2: number) => number;
+calculateSum = sum;
+console.log(calculateSum(3,4));
+
+let userFunc = {name: "john", age: 28}
+// greet(userFunc);
+greet(userFunc);

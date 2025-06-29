@@ -123,11 +123,37 @@ var userAlias = {
     lastname: "Doe",
     age: 36
 };
+//example 1
 function statusMessage(message, status) {
     return message + " " + status;
 }
-console.log(statusMessage("User fetched successfully.", 200));
+//test case
+// console.log(statusMessage("User fetched successfully.", 200));
+//example 2
 function addNumbers(num1, num2) {
     return num1 + num2;
 }
-console.log(addNumbers(4, 5));
+//test case
+// console.log(addNumbers(4,5));
+function addNumbers2(a, b) {
+    console.log(addNumbers2(10, 20)); //function not returning anything...therefore void 
+}
+function greetUser(user) {
+    var greetmsg = 'Hello, ' + user.name;
+    console.log(greetmsg);
+}
+function sum(num1, num2) {
+    return num1 + num2;
+}
+function isEligibleFunc(user) {
+    console.log(user.age >= 18);
+}
+var greet;
+greet = greetUser;
+greet = isEligibleFunc;
+var calculateSum;
+calculateSum = sum;
+console.log(calculateSum(3, 4));
+var userFunc = { name: "john", age: 28 };
+greet(userFunc);
+greet(userFunc);
