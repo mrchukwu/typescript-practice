@@ -61,7 +61,9 @@ var dynamicData;
 dynamicData = 100;
 var arrAny;
 arrAny = ['Hello', 100, true, null, undefined]; //can inpt any type of data
+//******************************************************************************* 
 //11. UNION TYPE
+//******************************************************************************* 
 var userUnion = null;
 function getUserUnion() {
     var uname = 'Jane';
@@ -69,8 +71,8 @@ function getUserUnion() {
     userUnion = { name: uname, age: uage };
     return userUnion;
 }
-var resultUnion = getUserUnion();
-console.log(resultUnion);
+// const resultUnion = getUserUnion();
+// console.log(resultUnion)
 //version 1. what if the information of status code needs to be rimmed
 // function printStatusUnion(message: string, statusCode: number | string){
 //     console.log(`${message}. Status code: ${statusCode}`)
@@ -84,7 +86,9 @@ function printStatusUnion(message, statusCode) {
 //test cases
 // printStatusUnion("User created successful", 201);
 // printStatusUnion("User not found", "404");
+//******************************************************************
 //12. LITERAL TYPE
+//****************************************************************** 
 var str1Literal = 'some string 1'; //this has a literal
 var str2Literal = "some string 2";
 function roleLiteralMessage(role) {
@@ -102,4 +106,28 @@ function roleLiteralMessage(role) {
             console.log("Unknow user permission");
     }
 }
-roleLiteralMessage('admin');
+function printMessageStatusAlias(message, status) {
+    if (typeof status === "string") {
+        console.log("".concat(message, ". Status code: ").concat(status.trim()));
+    }
+    console.log("".concat(message, ". Satus code: ").concat(status));
+}
+function getFullNameAlias(user) {
+    return user.firstname + " " + user.lastname;
+}
+function isEligibleToVotealias(user) {
+    return user.age >= 18;
+}
+var userAlias = {
+    firstname: "jane",
+    lastname: "Doe",
+    age: 36
+};
+function statusMessage(message, status) {
+    return message + " " + status;
+}
+console.log(statusMessage("User fetched successfully.", 200));
+function addNumbers(num1, num2) {
+    return num1 + num2;
+}
+console.log(addNumbers(4, 5));

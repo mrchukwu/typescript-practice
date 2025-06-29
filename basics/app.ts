@@ -78,7 +78,9 @@ dynamicData = 100;
 let arrAny: any[];
 arrAny = ['Hello', 100, true, null, undefined]; //can inpt any type of data
 
+//******************************************************************************* 
 //11. UNION TYPE
+//******************************************************************************* 
 let userUnion : {name: string, age: number} | null = null;
 
 function getUserUnion(){
@@ -87,8 +89,8 @@ function getUserUnion(){
     userUnion = {name: uname, age: uage};
     return userUnion;
 }
-const resultUnion = getUserUnion();
-console.log(resultUnion)
+// const resultUnion = getUserUnion();
+// console.log(resultUnion)
 
 //version 1. what if the information of status code needs to be rimmed
 // function printStatusUnion(message: string, statusCode: number | string){
@@ -106,7 +108,9 @@ function printStatusUnion(message: string, statusCode: string | number){
 // printStatusUnion("User created successful", 201);
 // printStatusUnion("User not found", "404");
 
+//******************************************************************
 //12. LITERAL TYPE
+//****************************************************************** 
 const str1Literal = 'some string 1'; //this has a literal
 let str2Literal = "some string 2";
 
@@ -126,4 +130,67 @@ function roleLiteralMessage(role: 'admin' | 'read-write' | 'read'){
     }
 }
 
-roleLiteralMessage('admin')
+// roleLiteralMessage('admin')
+
+//*************************************************************************
+//13. Understanding Type Alias : providing a custome name for your type
+//*************************************************************************
+type stringAlias = string;
+type stringOrNumber = string | number; //Type Alias : custome type 
+
+function printMessageStatusAlias(message: string, status: stringOrNumber){
+    if(typeof status === "string"){
+        console.log(`${message}. Status code: ${status.trim()}`)
+    }
+    console.log(`${message}. Satus code: ${status}`);
+}
+
+//test cases
+// printMessageStatusAlias("User request returned", "200");
+// printMessageStatusAlias("User not found", 404);
+
+//example 2 of Type Alias
+type User = {
+    firstname: string,
+    lastname: string, 
+    age: number
+}
+function getFullNameAlias(user: User){
+    return user.firstname + " " + user.lastname;
+}
+
+function isEligibleToVotealias(user:User){
+    return user.age >= 18;
+}
+
+let userAlias: User = {
+    firstname: "jane",
+    lastname: "Doe",
+    age: 36
+}
+
+// console.log(getFullNameAlias(userAlias))
+// console.log(isEligibleToVotealias(userAlias))
+
+//*************************************
+//FUNCTION RETURN TYPE : 
+// determine the type of value returned in a function
+//*************************************
+
+type stringOrNumberReturned = string | number;
+
+//example 1
+function statusMessage(message: string, status: stringOrNumberReturned): stringOrNumberReturned{
+    return message + " " + status;
+}
+
+//test case
+// console.log(statusMessage("User fetched successfully.", 200));
+
+//example 2
+function addNumbers(num1: number, num2: number): number {
+    return num1 + num2;
+}
+
+//test case
+// console.log(addNumbers(4,5));
