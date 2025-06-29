@@ -149,11 +149,30 @@ function isEligibleFunc(user) {
     console.log(user.age >= 18);
 }
 var greet;
-greet = greetUser;
+// greet = greetUser;
 greet = isEligibleFunc;
 var calculateSum;
 calculateSum = sum;
 console.log(calculateSum(3, 4));
 var userFunc = { name: "john", age: 28 };
+// greet(userFunc);
 greet(userFunc);
-greet(userFunc);
+//*************************************************
+//16. FUCTION TYPE FOR CVALLBACK
+//*************************************************
+var addNumbersFunc;
+function sumFunc(num1, num2) {
+    return num1 + num2;
+}
+function addFunc(num1, num2) {
+    console.log(num1 + num2);
+}
+//example 2
+function getResult(num1, num2, print) {
+    var result = num1 + num2;
+    print("Sum = ", result);
+}
+function display(msg, result) {
+    console.log(msg + result);
+}
+getResult(12, 13, display);

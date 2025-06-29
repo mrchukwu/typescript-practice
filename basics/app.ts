@@ -228,3 +228,28 @@ console.log(calculateSum(3,4));
 let userFunc = {name: "john", age: 28}
 // greet(userFunc);
 greet(userFunc);
+
+//*************************************************
+//16. FUCTION TYPE FOR CALLBACK
+//*************************************************
+let addNumbersFunc: (n1: number, n2: number) => number;
+
+function sumFunc(num1: number, num2: number) {
+    return num1 + num2;
+}
+
+function addFunc(num1: number, num2: number){
+    console.log(num1 + num2);
+}
+
+//example 2
+function getResult(num1: number, num2: number, print: (str: string, value: number) => void){
+    const result = num1 + num2;
+    print("Sum = ", result);
+}
+
+function display(msg: string, result: number){
+    console.log(msg + result);
+}
+
+getResult(12, 13, display);
