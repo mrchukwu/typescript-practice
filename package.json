@@ -13,5 +13,8 @@
     "git"
   ],
   "author": "Kennedy Chukwu",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "file:"
+  }
 }
