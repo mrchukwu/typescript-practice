@@ -252,4 +252,35 @@ function display(msg: string, result: number){
     console.log(msg + result);
 }
 
-getResult(12, 13, display);
+// getResult(12, 13, display);
+
+
+//*************************************************************
+//17. Unknown Type in Typescrippt
+//*************************************************************
+let strType : unknown;
+let uname : string = "Some string";
+
+strType = "123";
+uname = "Hello uname";
+
+if(strType === 'string'){
+    uname = strType
+}
+
+// console.log(strType);
+// console.log(typeof uname)
+
+//*******************************************************
+//18. NEVER Type in Typescript
+//*******************************************************
+type dataType = string | number; 
+let greetUserVoid = (user: string): void => {
+    console.log("Hello " + user)
+}
+greetUserVoid("kennedy");
+
+let createErrorMsgNever = (message: string, errorCode:dataType ): never => {
+    throw {message: message, code: errorCode};
+}
+createErrorMsgNever("Error picked from code", 404);

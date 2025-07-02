@@ -158,7 +158,7 @@ var userFunc = { name: "john", age: 28 };
 // greet(userFunc);
 greet(userFunc);
 //*************************************************
-//16. FUCTION TYPE FOR CVALLBACK
+//16. FUCTION TYPE FOR CALLBACK
 //*************************************************
 var addNumbersFunc;
 function sumFunc(num1, num2) {
@@ -175,4 +175,22 @@ function getResult(num1, num2, print) {
 function display(msg, result) {
     console.log(msg + result);
 }
-getResult(12, 13, display);
+// getResult(12, 13, display);
+//*************************************************************
+//17. Unknown Type in Typescrippt
+//*************************************************************
+var strType;
+var uname = "Some string";
+strType = "123";
+uname = "Hello uname";
+if (strType === 'string') {
+    uname = strType;
+}
+var greetUserVoid = function (user) {
+    console.log("Hello " + user);
+};
+greetUserVoid("kennedy");
+var createErrorMsgNever = function (message, errorCode) {
+    throw { message: message, code: errorCode };
+};
+createErrorMsgNever("Error picked from code", 404);
