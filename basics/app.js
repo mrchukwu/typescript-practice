@@ -1,20 +1,21 @@
+"use strict";
 console.log("Hello Typesvript");
-var firstname = "Kennedy";
-var lastname = "Chukwu";
+const firstname = "Kennedy";
+const lastname = "Chukwu";
 // console.log(firstname, " ",lastname)
 // 1. STRING DATATYPE
-var str1 = "This is a string using double quotes";
-var str2 = 'This is a string using single quotes';
-var str3 = "This is a string created using back ticks";
+const str1 = "This is a string using double quotes";
+const str2 = 'This is a string using single quotes';
+const str3 = `This is a string created using back ticks`;
 // 2 Numbers: numbers are always saved as floating numbers in  Tyescript
-var num = 12; //return 12.0
-var pi = 3.14;
+const num = 12; //return 12.0
+const pi = 3.14;
 // 3 Booleans
-var isEligible = true;
-var isEqual = false;
+let isEligible = true;
+let isEqual = false;
 //0, '', null, undefined " are all falsey values"
 // 5. TYPE ASSIGNMENT & TYPE INFERANCE
-var addNums = function (num1, num2) {
+const addNums = (num1, num2) => {
     return num1 + num1;
 };
 //  console.log(addNums(4, 5));
@@ -25,22 +26,22 @@ var addNums = function (num1, num2) {
 //     gender: "male"
 //  }
 //  console.log(person.name) //error
-var person1 = {
+let person1 = {
     name: "kennedy",
     age: 29,
     gender: "male"
 };
 // console.log(person1.name)
-var person2 = {
+let person2 = {
     name: "kennedy",
     age: 29,
     gender: "male"
 };
 //  ARRAYS IN TYPESCRIPT
-var person = ['john', 28, 'male', 1000];
-var birthyear = [1993, 1994, 1995];
+let person = ['john', 28, 'male', 1000];
+let birthyear = [1993, 1994, 1995];
 //8. TUPLES in TYPESCRIPT
-var employee = [123, 'smith', 2000, true];
+let employee = [123, 'smith', 2000, true];
 //9. ENUM IN TYPESCRIPT
 var Roles;
 (function (Roles) {
@@ -49,7 +50,7 @@ var Roles;
     Roles["WRITE_ONLY"] = "WRITE_ONLY";
     Roles["READ_WRITE"] = "READ_WRITE";
 })(Roles || (Roles = {}));
-var user = {
+const user = {
     name: "john",
     age: 30,
     gender: 'male',
@@ -57,17 +58,17 @@ var user = {
 };
 //  if(user.role === Roles.ADMIN) console.log(user.role);
 //10. ANY TYPE IN TYPESCRIPT
-var dynamicData;
+let dynamicData;
 dynamicData = 100;
-var arrAny;
+let arrAny;
 arrAny = ['Hello', 100, true, null, undefined]; //can inpt any type of data
 //******************************************************************************* 
 //11. UNION TYPE
 //******************************************************************************* 
-var userUnion = null;
+let userUnion = null;
 function getUserUnion() {
-    var uname = 'Jane';
-    var uage = 34;
+    const uname = 'Jane';
+    const uage = 34;
     userUnion = { name: uname, age: uage };
     return userUnion;
 }
@@ -80,8 +81,8 @@ function getUserUnion() {
 // veresion 2 taking cae of the trim() method on string
 function printStatusUnion(message, statusCode) {
     if (statusCode === 'string')
-        console.log("".concat(message, ". Status code: ").concat(statusCode.trim()));
-    console.log("".concat(message, ". Status code: ").concat(statusCode));
+        console.log(`${message}. Status code: ${statusCode.trim()}`);
+    console.log(`${message}. Status code: ${statusCode}`);
 }
 //test cases
 // printStatusUnion("User created successful", 201);
@@ -89,8 +90,8 @@ function printStatusUnion(message, statusCode) {
 //******************************************************************
 //12. LITERAL TYPE
 //****************************************************************** 
-var str1Literal = 'some string 1'; //this has a literal
-var str2Literal = "some string 2";
+const str1Literal = 'some string 1'; //this has a literal
+let str2Literal = "some string 2";
 function roleLiteralMessage(role) {
     switch (role) {
         case 'admin':
@@ -108,9 +109,9 @@ function roleLiteralMessage(role) {
 }
 function printMessageStatusAlias(message, status) {
     if (typeof status === "string") {
-        console.log("".concat(message, ". Status code: ").concat(status.trim()));
+        console.log(`${message}. Status code: ${status.trim()}`);
     }
-    console.log("".concat(message, ". Satus code: ").concat(status));
+    console.log(`${message}. Satus code: ${status}`);
 }
 function getFullNameAlias(user) {
     return user.firstname + " " + user.lastname;
@@ -118,7 +119,7 @@ function getFullNameAlias(user) {
 function isEligibleToVotealias(user) {
     return user.age >= 18;
 }
-var userAlias = {
+let userAlias = {
     firstname: "jane",
     lastname: "Doe",
     age: 36
@@ -139,7 +140,7 @@ function addNumbers2(a, b) {
     console.log(addNumbers2(10, 20)); //function not returning anything...therefore void 
 }
 function greetUser(user) {
-    var greetmsg = 'Hello, ' + user.name;
+    const greetmsg = 'Hello, ' + user.name;
     console.log(greetmsg);
 }
 function sum(num1, num2) {
@@ -148,19 +149,19 @@ function sum(num1, num2) {
 function isEligibleFunc(user) {
     console.log(user.age >= 18);
 }
-var greet;
+let greet;
 // greet = greetUser;
 greet = isEligibleFunc;
-var calculateSum;
+let calculateSum;
 calculateSum = sum;
 console.log(calculateSum(3, 4));
-var userFunc = { name: "john", age: 28 };
+let userFunc = { name: "john", age: 28 };
 // greet(userFunc);
 greet(userFunc);
 //*************************************************
 //16. FUCTION TYPE FOR CALLBACK
 //*************************************************
-var addNumbersFunc;
+let addNumbersFunc;
 function sumFunc(num1, num2) {
     return num1 + num2;
 }
@@ -169,7 +170,7 @@ function addFunc(num1, num2) {
 }
 //example 2
 function getResult(num1, num2, print) {
-    var result = num1 + num2;
+    const result = num1 + num2;
     print("Sum = ", result);
 }
 function display(msg, result) {
@@ -179,18 +180,18 @@ function display(msg, result) {
 //*************************************************************
 //17. Unknown Type in Typescrippt
 //*************************************************************
-var strType;
-var uname = "Some string";
+let strType;
+let uname = "Some string";
 strType = "123";
 uname = "Hello uname";
 if (strType === 'string') {
     uname = strType;
 }
-var greetUserVoid = function (user) {
+let greetUserVoid = (user) => {
     console.log("Hello " + user);
 };
 greetUserVoid("kennedy");
-var createErrorMsgNever = function (message, errorCode) {
+let createErrorMsgNever = (message, errorCode) => {
     throw { message: message, code: errorCode };
 };
 createErrorMsgNever("Error picked from code", 404);

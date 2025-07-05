@@ -1,0 +1,7 @@
+"use strict";
+console.log("Logged feom index.ts file");
+console.log("Loggged another detail");
+console.log("Loggged another detail");
+console.log("Loggged another detail");
+console.log("Loggged another detail");
+console.log("Loggged another detail");
