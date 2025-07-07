@@ -350,3 +350,12 @@ function addNumbersArr(...numbers: number[]){
 //test cases
 // console.log(addNumbersArr(1,2,3,4));
 // console.log(addNumbersArr(1,2,3,4,5,6,7));
+
+// ************************************
+// Nullish Coalescing Operator
+//*************************************
+const value = "";
+
+// let storage = value || "DEFAULT"; // it returns "DEFAULT", because || operator sees empty string as null value
+let storage = value ?? "DEFAULT"; //this will return "DEFSUALT" if value is null or undefined. But an empty string will be returned.
+console.log(storage);
