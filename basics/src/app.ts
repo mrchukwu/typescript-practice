@@ -189,7 +189,7 @@ function statusMessage(message: string, status: stringOrNumberReturned): stringO
 
 //example 2
 function addNumbers(num1: number, num2: number): number {
-    // return num1 + num2;
+    return num1 + num2;
 }
 
 //test case
@@ -307,4 +307,25 @@ const userObj = {
 }
 
 const {fname: f, lname, age, gender, city} = userObj;
-console.log(f)
+// console.log(f)
+
+// ************************************
+// Spread Operator
+// ************************************
+const userArrSpreadOperator: string[] = ["John", "Mark", "Mary"];
+// console.log(userArrSpreadOperator);
+// console.log(...userArrSpreadOperator);
+const copyArr = [...userArrSpreadOperator];
+// console.log(copyArr)
+const extendedUserArrSpreadOperator: string[] = ["Ray", "Jane", ...userArrSpreadOperator];
+console.log(extendedUserArrSpreadOperator);
+
+//Object spread operator
+const userObjtSp = {
+    fname: "John",
+    lname: "smith",
+    age: 28,
+}
+
+const employeeObjSpreadOperator = {salary: 20000, company: "Google", ...userObj};
+console.log(employeeObjSpreadOperator)

@@ -212,4 +212,22 @@ const userObj = {
     city: "Port Harourt"
 };
 const { fname: f, lname, age, gender, city } = userObj;
-console.log(f);
+// console.log(f)
+// ************************************
+// Spread Operator
+// ************************************
+const userArrSpreadOperator = ["John", "Mark", "Mary"];
+// console.log(userArrSpreadOperator);
+// console.log(...userArrSpreadOperator);
+const copyArr = [...userArrSpreadOperator];
+// console.log(copyArr)
+const extendedUserArrSpreadOperator = ["Ray", "Jane", ...userArrSpreadOperator];
+console.log(extendedUserArrSpreadOperator);
+//Object spread operator
+const userObjtSp = {
+    fname: "John",
+    lname: "smith",
+    age: 28,
+};
+const employeeObjSpreadOperator = Object.assign({ salary: 20000, company: "Google" }, userObj);
+console.log(employeeObjSpreadOperator);
