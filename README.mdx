@@ -3,6 +3,7 @@
 ### Overview
 - Introdution of Typescript
 - Installation
+- watch mode : tsc filename -w || --watch
 
 ### Basics
 - Data types in typescript
@@ -20,3 +21,29 @@
 - Function Type for Callback
 - Unknown Type in Typescript : used when you don't know the data value to store in a variable, better used than void.
 - Never Type in Typescript: used when your not returning anything from a function.
+- configuring the typescript compile process for larger projects
+    - tsc --init : initializes the project and creates a tsconfig.json file.
+    - tsc -w (or --watch): keeps watch in observing the compile process.
+    - inside the tsconfig.json file
+        - add the exclude for example "exclude": ["config.ts", "**/*.dev.ts", "*.dev.ts"]
+        - the last two in the array are wild-cards 
+        - "exclude"
+        - "include"
+        - "file"
+    compilierOptions
+        - "target": this states the version of javascript the typescript complies to (e.g es6 or es2016)
+        - "lib" : allows which specify which features allowed e.g APIs, versions. "lib": ["es2016", "dom"]
+        - "allowjs": This option allows us to check our compiled typescript to javascript to be cheked by re-compiling it.
+        - "sourcemap": This option enables us to debug our javascipt and typescript source code also.
+        - "rootDir": specifies the folder the typescript should look inside for compling typescript files
+        - "outDir": specifies the folder the typscript complied files, generates the javascipt output files.
+        - preventing-emitting: 
+            - "noEmit": When set to true, javascipt file is not generated after Typescript is compiled. This helps when building larger project, to avoid generating javascipt files everytime after compliation.
+            - "noEmitOnError": This will not allow a javascipt file to be generated once the Typescript file has an error.
+            - "removeComments" : When set to true, it does not add comments written in typescript when the javascipt file is generated.
+        - type checking
+            - checks all type of values passed
+        - code quality
+            - "noUnusedLoal": this will not allow create a local variable that's not used.
+            - "noUnusedGlobal": 
+            - "noUnusedParameter": this does not allow unsed parameter.
