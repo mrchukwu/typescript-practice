@@ -1,0 +1,2 @@
+"use strict";
+console.log("lloged from the src/demo.ts file....specified in the root directory...");
