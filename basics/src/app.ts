@@ -140,9 +140,9 @@ type stringOrNumber = string | number; //Type Alias : custome type
 
 function printMessageStatusAlias(message: string, status: stringOrNumber){
     if(typeof status === "string"){
-        console.log(`${message}. Status code: ${status.trim()}`)
+        // console.log(`${message}. Status code: ${status.trim()}`)
     }
-    console.log(`${message}. Satus code: ${status}`);
+    // console.log(`${message}. Satus code: ${status}`);
 }
 
 //test cases
@@ -189,14 +189,14 @@ function statusMessage(message: string, status: stringOrNumberReturned): stringO
 
 //example 2
 function addNumbers(num1: number, num2: number): number {
-    return num1 + num2;
+    // return num1 + num2;
 }
 
 //test case
 // console.log(addNumbers(4,5));
 
 function addNumbers2(a: number, b: number): void{
-    console.log(addNumbers2(10, 20)) //function not returning anything...therefore void 
+    // console.log(addNumbers2(10, 20)) //function not returning anything...therefore void 
 }
 
 //*******************************************
@@ -219,15 +219,15 @@ function isEligibleFunc(user: UserFunc) {
 
 let greet : (usr: UserFunc) => void;
 // greet = greetUser;
-greet = isEligibleFunc;
+// greet = isEligibleFunc;
 
 let calculateSum : (num1: number, num2: number) => number;
 calculateSum = sum;
-console.log(calculateSum(3,4));
+// console.log(calculateSum(3,4));
 
 let userFunc = {name: "john", age: 28}
 // greet(userFunc);
-greet(userFunc);
+// greet(userFunc);
 
 //*************************************************
 //16. FUCTION TYPE FOR CALLBACK
@@ -239,7 +239,7 @@ function sumFunc(num1: number, num2: number) {
 }
 
 function addFunc(num1: number, num2: number){
-    console.log(num1 + num2);
+    // console.log(num1 + num2);
 }
 
 //example 2
@@ -249,7 +249,7 @@ function getResult(num1: number, num2: number, print: (str: string, value: numbe
 }
 
 function display(msg: string, result: number){
-    console.log(msg + result);
+    // console.log(msg + result);
 }
 
 // getResult(12, 13, display);
@@ -283,4 +283,28 @@ greetUserVoid("kennedy");
 let createErrorMsgNever = (message: string, errorCode:dataType ): never => {
     throw {message: message, code: errorCode};
 }
-createErrorMsgNever("Error picked from code", 404);
+// createErrorMsgNever("Error picked from code", 404);
+
+
+//*******************************************************
+//*Array Destructuring
+//*******************************************************
+
+const personArr = ["John", "smith", 28, "male"];
+
+// const [fname, lname, age, gender] = personArr;
+// console.log(fname, lname, gender);
+
+// **************************************************
+// Object Destructuring
+// **************************************************
+const userObj = {
+    fname: "John",
+    lname: "Smith",
+    age: 29,
+    gender: "male",
+    city: "Port Harourt"
+}
+
+const {fname: f, lname, age, gender, city} = userObj;
+console.log(f)

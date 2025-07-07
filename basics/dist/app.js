@@ -109,9 +109,9 @@ function roleLiteralMessage(role) {
 }
 function printMessageStatusAlias(message, status) {
     if (typeof status === "string") {
-        console.log(`${message}. Status code: ${status.trim()}`);
+        // console.log(`${message}. Status code: ${status.trim()}`)
     }
-    console.log(`${message}. Satus code: ${status}`);
+    // console.log(`${message}. Satus code: ${status}`);
 }
 function getFullNameAlias(user) {
     return user.firstname + " " + user.lastname;
@@ -137,7 +137,7 @@ function addNumbers(num1, num2) {
 //test case
 // console.log(addNumbers(4,5));
 function addNumbers2(a, b) {
-    console.log(addNumbers2(10, 20)); //function not returning anything...therefore void 
+    // console.log(addNumbers2(10, 20)) //function not returning anything...therefore void 
 }
 function greetUser(user) {
     const greetmsg = 'Hello, ' + user.name;
@@ -151,13 +151,13 @@ function isEligibleFunc(user) {
 }
 let greet;
 // greet = greetUser;
-greet = isEligibleFunc;
+// greet = isEligibleFunc;
 let calculateSum;
 calculateSum = sum;
-console.log(calculateSum(3, 4));
+// console.log(calculateSum(3,4));
 let userFunc = { name: "john", age: 28 };
 // greet(userFunc);
-greet(userFunc);
+// greet(userFunc);
 //*************************************************
 //16. FUCTION TYPE FOR CALLBACK
 //*************************************************
@@ -166,7 +166,7 @@ function sumFunc(num1, num2) {
     return num1 + num2;
 }
 function addFunc(num1, num2) {
-    console.log(num1 + num2);
+    // console.log(num1 + num2);
 }
 //example 2
 function getResult(num1, num2, print) {
@@ -174,7 +174,7 @@ function getResult(num1, num2, print) {
     print("Sum = ", result);
 }
 function display(msg, result) {
-    console.log(msg + result);
+    // console.log(msg + result);
 }
 // getResult(12, 13, display);
 //*************************************************************
@@ -194,4 +194,22 @@ greetUserVoid("kennedy");
 let createErrorMsgNever = (message, errorCode) => {
     throw { message: message, code: errorCode };
 };
-createErrorMsgNever("Error picked from code", 404);
+// createErrorMsgNever("Error picked from code", 404);
+//*******************************************************
+//*Array Destructuring
+//*******************************************************
+const personArr = ["John", "smith", 28, "male"];
+// const [fname, lname, age, gender] = personArr;
+// console.log(fname, lname, gender);
+// **************************************************
+// Object Destructuring
+// **************************************************
+const userObj = {
+    fname: "John",
+    lname: "Smith",
+    age: 29,
+    gender: "male",
+    city: "Port Harourt"
+};
+const { fname: f, lname, age, gender, city } = userObj;
+console.log(f);
