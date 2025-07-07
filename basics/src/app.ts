@@ -235,7 +235,7 @@ let userFunc = {name: "john", age: 28}
 let addNumbersFunc: (n1: number, n2: number) => number;
 
 function sumFunc(num1: number, num2: number) {
-    return num1 + num2;
+    // return num1 + num2;
 }
 
 function addFunc(num1: number, num2: number){
@@ -245,7 +245,7 @@ function addFunc(num1: number, num2: number){
 //example 2
 function getResult(num1: number, num2: number, print: (str: string, value: number) => void){
     const result = num1 + num2;
-    print("Sum = ", result);
+    // print("Sum = ", result);
 }
 
 function display(msg: string, result: number){
@@ -276,7 +276,7 @@ if(strType === 'string'){
 //*******************************************************
 type dataType = string | number; 
 let greetUserVoid = (user: string): void => {
-    console.log("Hello " + user)
+    // console.log("Hello " + user)
 }
 greetUserVoid("kennedy");
 
@@ -318,7 +318,7 @@ const userArrSpreadOperator: string[] = ["John", "Mark", "Mary"];
 const copyArr = [...userArrSpreadOperator];
 // console.log(copyArr)
 const extendedUserArrSpreadOperator: string[] = ["Ray", "Jane", ...userArrSpreadOperator];
-console.log(extendedUserArrSpreadOperator);
+// console.log(extendedUserArrSpreadOperator);
 
 //Object spread operator
 const userObjtSp = {
@@ -328,4 +328,25 @@ const userObjtSp = {
 }
 
 const employeeObjSpreadOperator = {salary: 20000, company: "Google", ...userObj};
-console.log(employeeObjSpreadOperator)
+// console.log(employeeObjSpreadOperator)
+
+
+// ****************************************************
+// Rest parttern and Rest Operator
+// ****************************************************
+const [a, b, c, ...rest] = [1,2,4,5,6,7,8,9];
+// console.log(rest);
+const arrSpread = [10, 11, 12, ...rest];
+// console.log(arrSpread);
+
+function addNumbersArr(...numbers: number[]){
+    let count = 0;
+    for(let i of numbers){
+        count += i;
+    }
+    return count;
+}
+
+//test cases
+// console.log(addNumbersArr(1,2,3,4));
+// console.log(addNumbersArr(1,2,3,4,5,6,7));
