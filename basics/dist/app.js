@@ -1,4 +1,5 @@
 "use strict";
+var _a;
 console.log("Hello Typesvript");
 const firstname = "Kennedy";
 const lastname = "Chukwu";
@@ -254,4 +255,18 @@ function addNumbersArr(...numbers) {
 const value = "";
 // let storage = value || "DEFAULT"; // it returns "DEFAULT", because || operator sees empty string as null value
 let storage = value !== null && value !== void 0 ? value : "DEFAULT"; //this will return "DEFSUALT" if value is null or undefined. But an empty string will be returned.
-console.log(storage);
+// console.log(storage);
+// *****************************
+// Optional Chaining
+//******************************
+const products = [
+    { name: 'iPhone', price: 1200, details: { color: 'black', ram: 8 } },
+    { name: 'T-Shirt', price: 120, details: { color: 'red', size: 32 } },
+    { name: 'TS Book', price: 50, pages: 120, author: 'Sam' }
+];
+for (let prod of products) {
+    console.log("******************************\n\n");
+    console.log("Product name: " + prod.name);
+    console.log("Product name: " + prod.price);
+    console.log("Product name: " + ((_a = prod.details) === null || _a === void 0 ? void 0 : _a.color));
+}

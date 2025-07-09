@@ -358,4 +358,22 @@ const value = "";
 
 // let storage = value || "DEFAULT"; // it returns "DEFAULT", because || operator sees empty string as null value
 let storage = value ?? "DEFAULT"; //this will return "DEFSUALT" if value is null or undefined. But an empty string will be returned.
-console.log(storage);
+// console.log(storage);
+
+
+// *****************************
+// Optional Chaining
+//******************************
+
+const products = [
+    {name: 'iPhone', price: 1200, details: {color: 'black', ram: 8}},
+    {name: 'T-Shirt', price: 120, details: {color: 'red', size: 32}},
+    {name: 'TS Book', price: 50, pages: 120, author: 'Sam'}
+]
+
+for(let prod of products){
+    console.log("******************************\n\n")
+    console.log("Product name: " + prod.name)
+    console.log("Product name: " + prod.price)
+    console.log("Product name: " + prod.details?.color)
+}
